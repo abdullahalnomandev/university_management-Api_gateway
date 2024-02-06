@@ -1,7 +1,7 @@
 import { Response } from 'express';
 
 interface IResponse {
-  success: boolean;
+  status: string;
   statusCode: number;
   message?: string;
   meta?: {
@@ -15,8 +15,8 @@ interface IResponse {
 const sendResponse = <T>(
   res: Response,
   data: {
+    status: string;
     statusCode: number;
-    success: boolean;
     message?: string;
     meta?: {
       page: number;
@@ -27,7 +27,7 @@ const sendResponse = <T>(
   }
 ) => {
   const response: IResponse = {
-    success: data.success,
+    status: data.status,
     statusCode: data.statusCode,
     message: data.message || 'Success',
     meta: data.meta,

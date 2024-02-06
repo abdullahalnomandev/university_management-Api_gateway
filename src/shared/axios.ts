@@ -35,6 +35,7 @@ const HttpsService = (baseUrl:string):AxiosInstance => {
 const AuthService = HttpsService(config.authServiceUrl);
 const CoreService = HttpsService(config.coreServiceUrl);
 
+
 export {
     HttpsService,
     AuthService,

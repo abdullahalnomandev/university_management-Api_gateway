@@ -1,5 +1,5 @@
 export interface IGenericResponse {
-  success: boolean;
+  status: string;
   statusCode: number;
   message: string;
   meta?: {

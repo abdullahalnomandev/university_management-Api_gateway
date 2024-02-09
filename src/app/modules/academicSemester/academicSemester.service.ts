@@ -50,9 +50,23 @@ const updateOneIntoDB = async (req: Request): Promise<IGenericResponse> => {
   return response;
 };
 
+const deleteOneByID = async (req: Request): Promise<IGenericResponse> => {
+  const { id } = req.params;
+  const response: IGenericResponse = await HttpsService.delete(
+    `/academic-semesters/${id}`,    {
+      headers: {
+        Authorization: req.headers.authorization
+      }
+    }
+  );
+
+  return response;
+};
+
 export const AcademicSemesterService = {
   insertIntoDB,
   getAllFromDB,
   getSingleFromDB,
-  updateOneIntoDB
+  updateOneIntoDB,
+  deleteOneByID
 };

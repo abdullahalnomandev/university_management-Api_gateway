@@ -1,4 +1,4 @@
-import { Request, query } from 'express';
+import { Request } from 'express';
 import { CoreService as HttpsService } from '../../../shared/axios';
 import { IGenericResponse } from '../../../interfaces/common';
 

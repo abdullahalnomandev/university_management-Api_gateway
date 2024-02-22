@@ -1,5 +1,4 @@
 import express from 'express';
-import validateRequest from '../../middlewares/validateRequest';
 import { OfferedCourseClassScheduleController } from './offeredCourseClassSchedule.controller';
 
 

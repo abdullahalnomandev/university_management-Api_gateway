@@ -17,7 +17,18 @@ const refreshToken = async (req: Request): Promise<IGenericResponse> => {
   return response;
 };
 
+const changePassword = async(req:Request):Promise<IGenericResponse>=>{
+   const response: IGenericResponse = await AuthService.post('/auth/change-password', req.body, {
+     headers: {
+       Authorization:req.headers.authorization
+     }
+   });
+
+   return response;
+}
+
 export const AuthenticationService = {
   loginUser,
-  refreshToken
+  refreshToken,
+  changePassword
 };

@@ -4,9 +4,7 @@ import ApiError from '../../errors/apiError';
 import { JwtHelper } from '../../helpers/jwtHelper';
 import { IAuthUser } from '../../interfaces/auth';
 
-const auth =
-  (...requiredRoles: string[]) =>
-    async (req: any, res: Response, next: NextFunction) => {
+const auth =(...requiredRoles: string[]) => async (req: any, res: Response, next: NextFunction) => {
       return new Promise(async (resolve, reject) => {
         const token = req.headers.authorization;
 
